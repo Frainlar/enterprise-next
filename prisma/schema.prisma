@@ -8,7 +8,7 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId // MongoDB uses auto-generated ObjectId
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
   email    String  @unique
   password String
   sessions Session[]
@@ -16,7 +16,7 @@ model User {
 
 model Session {
   id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  userId    String  @map("userId") @db.ObjectId
+  userId    String  @db.ObjectId
   user      User    @relation(fields: [userId], references: [id])
   expiresAt DateTime
 }

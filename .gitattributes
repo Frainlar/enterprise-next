@@ -1,0 +1,3 @@
+# Ensure Prisma schema files are tracked correctly
+*.prisma linguist-language=Prisma
+*.prisma text eol=lf
